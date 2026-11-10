@@ -1,0 +1,55 @@
+# Casos dorados sobre el corpus SINTÉTICO (data/synthetic_corpus). Una línea JSON por caso.
+# retrieval (group léxico|parafraseo): pasa si algún doc de expect_docs está entre los k primeros documentos distintos.
+# filter / selfquery: allowed_docs (todo lo devuelto debe estar ahí), require_docs, forbid_docs, expect_empty.
+# abstain: la consulta no tiene respuesta en el corpus; el QA debe abstenerse SIN llamar al LLM.
+{"id": "r01-conservacion-historias", "type": "retrieval", "query": "¿Cuánto tiempo se conservan las historias clínicas?", "expect_docs": ["retencion-datos-2022"]}
+{"id": "r02-compra-directa", "type": "retrieval", "query": "¿Hasta qué monto se puede hacer una compra directa?", "expect_docs": ["compras-normativa-2023"]}
+{"id": "r03-recurso-adjudicacion", "type": "retrieval", "query": "plazo para presentar un recurso contra la adjudicación", "expect_docs": ["compras-normativa-2023"]}
+{"id": "r04-licencia-anual", "type": "retrieval", "query": "¿Cuántos días de licencia anual le corresponden a un funcionario?", "expect_docs": ["licencias-personal-2020"]}
+{"id": "r05-derrame-biologico", "type": "retrieval", "query": "qué hacer ante un derrame biológico en el laboratorio", "expect_docs": ["bioseguridad-laboratorio-2021"]}
+{"id": "r06-triage-naranja", "type": "retrieval", "query": "en cuánto tiempo hay que atender a un paciente naranja en la guardia", "expect_docs": ["triage-guardia-2024"]}
+{"id": "r07-desinfeccion-transductores", "type": "retrieval", "query": "cómo se desinfectan los transductores del ecógrafo", "expect_docs": ["mantenimiento-ecografo-2022"]}
+{"id": "r08-mediana-espera", "type": "retrieval", "query": "mediana de espera para consulta de especialidad", "expect_docs": ["informe-anual-2023"]}
+{"id": "r09-consultas-ambulatorias", "type": "retrieval", "query": "cuántas consultas ambulatorias hubo durante el año", "expect_docs": ["informe-anual-2023"]}
+{"id": "r10-datos-nube", "type": "retrieval", "query": "¿se pueden enviar datos de salud a servicios en la nube?", "expect_docs": ["retencion-datos-2022"]}
+{"id": "r11-publicacion-licitacion", "type": "retrieval", "query": "con cuánta anticipación se publica una licitación pública", "expect_docs": ["compras-normativa-2023"]}
+{"id": "r12-temperatura-sala", "type": "retrieval", "query": "temperatura que debe mantener la sala del tomógrafo", "expect_docs": ["mantenimiento-tomografo-2024"]}
+{"id": "r13-bitacora-equipo", "type": "retrieval", "query": "dónde se documenta cada intervención en la bitácora del equipo", "expect_docs": ["mantenimiento-tomografo-2024"]}
+{"id": "r14-epp-obligatorio", "type": "retrieval", "query": "equipo de protección personal obligatorio en el laboratorio", "expect_docs": ["bioseguridad-laboratorio-2021"]}
+{"id": "r15-licencia-estudio", "type": "retrieval", "query": "licencia por estudio para rendir exámenes", "expect_docs": ["licencias-personal-2020"]}
+{"id": "r16-reevaluacion-espera", "type": "retrieval", "query": "cada cuánto se reevalúan los pacientes que esperan", "expect_docs": ["triage-guardia-2024"]}
+{"id": "r17-respuesta-supresion", "type": "retrieval", "query": "en cuánto tiempo responde el organismo a un pedido de supresión de datos personales", "expect_docs": ["retencion-datos-2022"]}
+{"id": "r18-verificacion-fantoma", "type": "retrieval", "query": "verificación anual del rendimiento con fantoma", "expect_docs": ["mantenimiento-ecografo-2022"]}
+{"id": "r19-metas-2024", "type": "retrieval", "query": "metas propuestas para 2024 del hospital", "expect_docs": ["informe-anual-2023"]}
+{"id": "r20-residuos-punzantes", "type": "retrieval", "query": "dónde se descartan los residuos punzantes", "expect_docs": ["bioseguridad-laboratorio-2021"]}
+{"id": "p01-guardar-expedientes", "type": "retrieval", "group": "parafraseo", "query": "¿Por cuántos años se guardan los expedientes médicos de los pacientes?", "expect_docs": ["retencion-datos-2022"]}
+{"id": "p02-concurso-abierto", "type": "retrieval", "group": "parafraseo", "query": "umbral económico a partir del cual hay que llamar a concurso abierto de ofertas", "expect_docs": ["compras-normativa-2023"]}
+{"id": "p03-vacaciones", "type": "retrieval", "group": "parafraseo", "query": "cuántos días de vacaciones pagas tiene el personal", "expect_docs": ["licencias-personal-2020"]}
+{"id": "p04-frasco-infeccioso", "type": "retrieval", "group": "parafraseo", "query": "qué hago si se me cae un frasco con muestras infecciosas", "expect_docs": ["bioseguridad-laboratorio-2021"]}
+{"id": "p05-prioridad-urgencias", "type": "retrieval", "group": "parafraseo", "query": "cómo se prioriza a los pacientes que llegan a urgencias", "expect_docs": ["triage-guardia-2024"]}
+{"id": "p06-sondas-ultrasonido", "type": "retrieval", "group": "parafraseo", "query": "cuidado y limpieza de las sondas de ultrasonido", "expect_docs": ["mantenimiento-ecografo-2022"]}
+{"id": "p07-turno-especialista", "type": "retrieval", "group": "parafraseo", "query": "cuánto se demora en conseguir turno con un especialista", "expect_docs": ["informe-anual-2023"]}
+{"id": "p08-servidores-externos", "type": "retrieval", "group": "parafraseo", "query": "se permite subir información clínica a servidores externos", "expect_docs": ["retencion-datos-2022"]}
+{"id": "p09-indumentaria-laboratorio", "type": "retrieval", "group": "parafraseo", "query": "qué ropa hay que vestir para trabajar con muestras", "expect_docs": ["bioseguridad-laboratorio-2021"]}
+{"id": "p10-equipo-rayos", "type": "retrieval", "group": "parafraseo", "query": "mantenimiento del equipo de rayos que hace imágenes del cuerpo", "expect_docs": ["mantenimiento-tomografo-2024", "mantenimiento-tomografo-2019"]}
+{"id": "f01-calibracion-solo-2024", "type": "filter", "query": "calibración del tomógrafo", "where": {"year": 2024}, "require_docs": ["mantenimiento-tomografo-2024"], "forbid_docs": ["mantenimiento-tomografo-2019"]}
+{"id": "f02-calibracion-hasta-2020", "type": "filter", "query": "calibración del tomógrafo", "where": {"year": {"$lte": 2020}}, "allowed_docs": ["mantenimiento-tomografo-2019", "licencias-personal-2020"], "require_docs": ["mantenimiento-tomografo-2019"], "forbid_docs": ["mantenimiento-tomografo-2024"]}
+{"id": "f03-solo-instituto", "type": "filter", "query": "plazos y procedimientos", "where": {"institution": "Instituto Modelo"}, "allowed_docs": ["mantenimiento-ecografo-2022", "bioseguridad-laboratorio-2021"]}
+{"id": "f04-normativa-reciente", "type": "filter", "query": "protocolo y plazos", "where": {"document_type": {"$in": ["normativa"]}, "year": {"$gte": 2022}}, "allowed_docs": ["compras-normativa-2023", "retencion-datos-2022"], "forbid_docs": ["licencias-personal-2020"]}
+{"id": "f05-institucion-inexistente", "type": "filter", "query": "calibración del tomógrafo", "where": {"institution": "Institución Inexistente"}, "expect_empty": true}
+{"id": "s01-plan-anio", "type": "selfquery", "query": "calibración del tomógrafo en 2024", "plan": {"query": "calibración del tomógrafo", "filters": [{"field": "year", "op": "eq", "value": 2024}]}, "require_docs": ["mantenimiento-tomografo-2024"], "forbid_docs": ["mantenimiento-tomografo-2019"]}
+{"id": "s02-plan-vocabulario-canonico", "type": "selfquery", "query": "normativas del ministerio modelo posteriores a 2021", "plan": {"query": "normativas", "filters": [{"field": "institution", "op": "eq", "value": "ministerio modelo"}, {"field": "year", "op": "gt", "value": 2021}, {"field": "document_type", "op": "eq", "value": "normativa"}]}, "allowed_docs": ["compras-normativa-2023", "retencion-datos-2022"], "forbid_docs": ["licencias-personal-2020"]}
+{"id": "s03-alcance-del-llamador-no-se-anula", "type": "selfquery", "query": "documentos del Ministerio Modelo", "scope": {"institution": "Hospital Modelo"}, "plan": {"query": "documentos", "filters": [{"field": "institution", "op": "eq", "value": "Ministerio Modelo"}]}, "expect_empty": true}
+{"id": "a01-sin-respuesta-receta", "type": "abstain", "query": "receta de dulce de leche casero"}
+{"id": "a02-sin-respuesta-futbol", "type": "abstain", "query": "resultados del campeonato de fútbol de ayer"}
+{"id": "a03-sin-respuesta-router", "type": "abstain", "query": "cómo configurar un router wifi"}
+{"id": "a04-cercano-resonador", "type": "abstain", "query": "cada cuánto se calibra el resonador magnético"}
+{"id": "a05-cercano-licencia-salud", "type": "abstain", "query": "cuántos días de licencia por maternidad otorga el Ministerio de Salud Pública", "known_limit": ["hashing-2048"]}
+{"id": "a06-cercano-triage-pediatrico", "type": "abstain", "query": "cómo se clasifica a un paciente pediátrico en urgencias de maternidad"}
+{"id": "a07-cercano-compras-licitacion-internacional", "type": "abstain", "query": "requisitos para una licitación internacional de obra pública", "known_limit": ["hashing-2048"]}
+{"id": "a08-cercano-datos-biometricos", "type": "abstain", "query": "plazo de conservación de datos biométricos de los pacientes", "known_limit": ["hashing-2048"]}
+{"id": "a09-cercano-ecografo-otro", "type": "abstain", "query": "cómo se mantiene un equipo de rayos X portátil", "known_limit": ["hashing-2048"]}
+{"id": "a10-cercano-bioseguridad-nivel4", "type": "abstain", "query": "protocolo de bioseguridad para laboratorios de nivel 4 con virus ébola", "known_limit": ["hashing-2048"]}
+{"id": "a11-cercano-informe-2025", "type": "abstain", "query": "cuántas cirugías se realizaron en el hospital durante 2025"}
+{"id": "a12-cercano-sueldos", "type": "abstain", "query": "escala salarial del personal del Hospital Modelo", "known_limit": ["hashing-2048"]}
+{"id": "a13-cercano-tomografo-costo", "type": "abstain", "query": "cuánto cuesta comprar un tomógrafo nuevo", "known_limit": ["hashing-2048"]}

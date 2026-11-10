@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "centro-ia-rag-data-pipeline"
+version = "0.2.0"
+description = "Pipeline RAG de referencia: ingesta con metadata, chunking, stores aislados, recuperación (padre real, multi-query, self-query), QA con abstención y evals de recuperación."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Fernando León Moloney" }]
+dependencies = [
+    "langchain-core>=1.0,<2",
+    "langchain-text-splitters>=1.0,<2",
+    "pydantic>=2.7,<3",
+    "numpy>=1.26",
+    "pypdf>=4.0",
+]
+
+[project.optional-dependencies]
+chroma = ["chromadb>=1.0,<2"]
+local = ["sentence-transformers>=3.0"]
+watsonx = ["ibm-watsonx-ai>=1.1"]
+dev = ["pytest>=8", "ruff>=0.6", "chromadb>=1.0,<2"]
+
+[project.scripts]
+rag-evals = "centro_rag.evals:main"
+rag = "centro_rag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]

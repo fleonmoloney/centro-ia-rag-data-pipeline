@@ -1,0 +1,7 @@
+.git
+.venv
+.rag_store
+__pycache__
+*.egg-info
+tests
+reports

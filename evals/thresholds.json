@@ -1,0 +1,50 @@
+{
+  "hashing-2048": {
+    "léxico/dense": {
+      "hit_at_k": 0.95,
+      "mrr": 0.95
+    },
+    "léxico/parent-section": {
+      "hit_at_k": 0.95,
+      "mrr": 0.95
+    },
+    "léxico/parent-document": {
+      "hit_at_k": 0.95,
+      "mrr": 0.95
+    },
+    "parafraseo/dense": {
+      "hit_at_k": 0.8,
+      "mrr": 0.6
+    },
+    "parafraseo/parent-section": {
+      "hit_at_k": 0.8,
+      "mrr": 0.6
+    }
+  },
+  "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
+    "léxico/dense": {
+      "hit_at_k": 0.95,
+      "mrr": 0.95
+    },
+    "léxico/parent-section": {
+      "hit_at_k": 0.95,
+      "mrr": 0.95
+    },
+    "léxico/parent-document": {
+      "hit_at_k": 0.95,
+      "mrr": 0.95
+    },
+    "parafraseo/dense": {
+      "hit_at_k": 0.9,
+      "mrr": 0.85
+    },
+    "parafraseo/parent-section": {
+      "hit_at_k": 0.9,
+      "mrr": 0.85
+    },
+    "parafraseo/parent-document": {
+      "hit_at_k": 0.9,
+      "mrr": 0.85
+    }
+  }
+}
