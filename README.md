@@ -4,8 +4,7 @@ Pipeline RAG de referencia en Python: ingesta con metadata, chunking jerárquico
 vectoriales **aislados** con upsert/borrado reales, recuperación (padre, multi-query, self-query),
 respuesta con citas y abstención, y evals de recuperación reproducibles.
 
-Es un prototipo de arquitectura probado de forma automática, no un producto. Más abajo está dicho,
-sin adornos, qué se midió y qué no.
+Es un prototipo de arquitectura.
 
 ## Qué incluye
 
@@ -127,9 +126,7 @@ generalice. Para tu corpus real armá tu propio set de preguntas sin respuesta y
   como no confiables, lo cual es una mitigación y no una defensa completa.
 - **Escala.** `MemoryBackend` busca por fuerza bruta (O(n) por consulta). Chroma escala mejor, pero
   no se probó con volúmenes reales.
-- **`WatsonxEmbedder` y `SentenceTransformerEmbedder` no se probaron contra sus servicios.** El
-  cableado de watsonx se verifica con un SDK simulado; confirmá que el `model_id` esté disponible
-  en tu región.
+- **`WatsonxEmbedder` y `SentenceTransformerEmbedder` no se probaron contra sus servicios.**
 
 ## Datos sensibles
 
@@ -155,8 +152,8 @@ tests/            144 tests (pytest); los de almacenamiento corren contra Memory
 docs/             decisiones de diseño (ADR)
 ```
 
-Por qué no hay Gradio: la interfaz anterior reconstruía el índice completo en cada pregunta y
-dependía de un entorno de laboratorio de IBM. Prefiero una CLI que persista el índice y sea
+La interfaz anterior (Gradio) reconstruía el índice completo en cada pregunta y
+dependía de un entorno de laboratorio de IBM. Ahora una CLI que persiste el índice y es
 verificable. Una interfaz web se puede construir encima de `Collection` y `qa.answer`.
 
-Licencia MIT.
+Fernando León Moloney - Licencia MIT.
